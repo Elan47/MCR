@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "versions",
+  "info": {
+    "singularName": "version",
+    "pluralName": "versions",
+    "displayName": "Version"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Version": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

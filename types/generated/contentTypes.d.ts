@@ -489,6 +489,36 @@ export interface ApiUjjivanUjjivan extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiVersionVersion extends Struct.CollectionTypeSchema {
+  collectionName: 'versions';
+  info: {
+    displayName: 'Version';
+    pluralName: 'versions';
+    singularName: 'version';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::version.version'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Version: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+  };
+}
+
 export interface ApiWorkTypeWorkType extends Struct.CollectionTypeSchema {
   collectionName: 'work_types';
   info: {
@@ -1064,6 +1094,7 @@ declare module '@strapi/strapi' {
       'api::client.client': ApiClientClient;
       'api::equita.equita': ApiEquitaEquita;
       'api::ujjivan.ujjivan': ApiUjjivanUjjivan;
+      'api::version.version': ApiVersionVersion;
       'api::work-type.work-type': ApiWorkTypeWorkType;
       'api::year.year': ApiYearYear;
       'plugin::content-releases.release': PluginContentReleasesRelease;

@@ -20,6 +20,11 @@
     },
     "details": {
       "type": "richtext"
+    },
+    "version": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::version.version"
     }
   }
 }

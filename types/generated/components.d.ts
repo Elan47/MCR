@@ -23,6 +23,7 @@ export interface FieldField extends Struct.ComponentSchema {
     count: Schema.Attribute.Integer;
     details: Schema.Attribute.RichText;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    version: Schema.Attribute.Relation<'oneToOne', 'api::version.version'>;
     work_type: Schema.Attribute.Relation<
       'oneToOne',
       'api::work-type.work-type'
