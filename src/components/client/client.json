@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_client_clients",
+  "info": {
+    "displayName": "client",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "api": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

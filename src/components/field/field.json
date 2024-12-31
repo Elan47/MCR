@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_field_fields",
+  "info": {
+    "displayName": "field",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "count": {
+      "type": "integer"
+    },
+    "work_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::work-type.work-type"
+    },
+    "details": {
+      "type": "richtext"
+    }
+  }
+}

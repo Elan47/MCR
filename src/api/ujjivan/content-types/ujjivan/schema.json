@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ujjivans",
+  "info": {
+    "singularName": "ujjivan",
+    "pluralName": "ujjivans",
+    "displayName": "Ujjivan"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Year": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::year.year"
+    },
+    "Month": {
+      "type": "component",
+      "repeatable": false,
+      "component": "month.month"
+    }
+  }
+}

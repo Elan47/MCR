@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_month_months",
+  "info": {
+    "displayName": "month",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Field": {
+      "type": "component",
+      "repeatable": true,
+      "component": "field.field",
+      "required": true
+    },
+    "Month": {
+      "type": "enumeration",
+      "enum": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "required": true
+    },
+    "Expected": {
+      "type": "integer"
+    },
+    "Submitted": {
+      "type": "integer"
+    },
+    "Revised": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aptuses",
+  "info": {
+    "singularName": "aptus",
+    "pluralName": "aptuses",
+    "displayName": "Aptus",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Year": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::year.year"
+    },
+    "Month": {
+      "type": "component",
+      "repeatable": false,
+      "component": "month.month"
+    }
+  }
+}
