@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "social_types",
+  "info": {
+    "singularName": "social-type",
+    "pluralName": "social-types",
+    "displayName": "Social Type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Type": {
+      "type": "string"
+    }
+  }
+}

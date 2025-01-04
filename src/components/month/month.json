@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "Field": {
+    "Creative": {
       "type": "component",
       "repeatable": true,
       "component": "field.field",
@@ -30,14 +30,20 @@
       ],
       "required": true
     },
-    "Expected": {
-      "type": "integer"
+    "Impression": {
+      "type": "component",
+      "repeatable": true,
+      "component": "impression.social-field"
     },
-    "Submitted": {
-      "type": "integer"
+    "Campaign": {
+      "type": "component",
+      "repeatable": true,
+      "component": "campaign.campaign"
     },
-    "Revised": {
-      "type": "integer"
+    "TopCity": {
+      "type": "component",
+      "repeatable": true,
+      "component": "performance.performance"
     }
   }
 }

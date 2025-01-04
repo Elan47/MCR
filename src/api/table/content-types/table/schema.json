@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tables",
+  "info": {
+    "singularName": "table",
+    "pluralName": "tables",
+    "displayName": "Table",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "CreativeType": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::work-type.work-type"
+    },
+    "SocialType": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::social-type.social-type"
+    },
+    "CampaignType": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::campaign-type.campaign-type"
+    }
+  }
+}

@@ -1,5 +1,22 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface CampaignCampaign extends Struct.ComponentSchema {
+  collectionName: 'components_campaign_campaigns';
+  info: {
+    displayName: 'Campaign';
+  };
+  attributes: {
+    CampaignType: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::campaign-type.campaign-type'
+    >;
+    Count: Schema.Attribute.Integer;
+    Title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+  };
+}
+
 export interface ClientClient extends Struct.ComponentSchema {
   collectionName: 'components_client_clients';
   info: {
@@ -20,14 +37,33 @@ export interface FieldField extends Struct.ComponentSchema {
     displayName: 'field';
   };
   attributes: {
-    count: Schema.Attribute.Integer;
-    details: Schema.Attribute.RichText;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    version: Schema.Attribute.Relation<'oneToOne', 'api::version.version'>;
-    work_type: Schema.Attribute.Relation<
+    Count: Schema.Attribute.Integer;
+    Detail: Schema.Attribute.RichText;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    WorkType: Schema.Attribute.Relation<'oneToOne', 'api::work-type.work-type'>;
+  };
+}
+
+export interface ImpressionSocialField extends Struct.ComponentSchema {
+  collectionName: 'components_impression_social_fields';
+  info: {
+    description: '';
+    displayName: 'Social Field';
+  };
+  attributes: {
+    Comment: Schema.Attribute.Integer;
+    Count: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
+    Detail: Schema.Attribute.RichText;
+    Like: Schema.Attribute.Integer;
+    Reach: Schema.Attribute.Integer;
+    Share: Schema.Attribute.Integer;
+    SocialType: Schema.Attribute.Relation<
       'oneToOne',
-      'api::work-type.work-type'
+      'api::social-type.social-type'
     >;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -38,9 +74,10 @@ export interface MonthMonth extends Struct.ComponentSchema {
     displayName: 'month';
   };
   attributes: {
-    Expected: Schema.Attribute.Integer;
-    Field: Schema.Attribute.Component<'field.field', true> &
+    Campaign: Schema.Attribute.Component<'campaign.campaign', true>;
+    Creative: Schema.Attribute.Component<'field.field', true> &
       Schema.Attribute.Required;
+    Impression: Schema.Attribute.Component<'impression.social-field', true>;
     Month: Schema.Attribute.Enumeration<
       [
         'January',
@@ -58,17 +95,30 @@ export interface MonthMonth extends Struct.ComponentSchema {
       ]
     > &
       Schema.Attribute.Required;
-    Revised: Schema.Attribute.Integer;
-    Submitted: Schema.Attribute.Integer;
+    TopCity: Schema.Attribute.Component<'performance.performance', true>;
+  };
+}
+
+export interface PerformancePerformance extends Struct.ComponentSchema {
+  collectionName: 'components_performance_performances';
+  info: {
+    displayName: 'Performance';
+  };
+  attributes: {
+    City: Schema.Attribute.Relation<'oneToOne', 'api::city.city'>;
+    UserCount: Schema.Attribute.Integer;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'campaign.campaign': CampaignCampaign;
       'client.client': ClientClient;
       'field.field': FieldField;
+      'impression.social-field': ImpressionSocialField;
       'month.month': MonthMonth;
+      'performance.performance': PerformancePerformance;
     }
   }
 }

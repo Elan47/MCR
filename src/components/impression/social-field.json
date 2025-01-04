@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_impression_social_fields",
+  "info": {
+    "displayName": "Social Field",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "SocialType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::social-type.social-type"
+    },
+    "Like": {
+      "type": "integer"
+    },
+    "Comment": {
+      "type": "integer"
+    },
+    "Share": {
+      "type": "integer"
+    },
+    "Reach": {
+      "type": "integer"
+    },
+    "Detail": {
+      "type": "richtext"
+    },
+    "Count": {
+      "type": "integer",
+      "default": 1,
+      "required": true
+    }
+  }
+}

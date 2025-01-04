@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaign_types",
+  "info": {
+    "singularName": "campaign-type",
+    "pluralName": "campaign-types",
+    "displayName": "Campaign Type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Type": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

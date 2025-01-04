@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_campaign_campaigns",
+  "info": {
+    "displayName": "Campaign"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "CampaignType": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::campaign-type.campaign-type"
+    },
+    "Count": {
+      "type": "integer"
+    }
+  }
+}

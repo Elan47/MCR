@@ -396,6 +396,64 @@ export interface ApiAptusAptus extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCampaignTypeCampaignType
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'campaign_types';
+  info: {
+    displayName: 'Campaign Type';
+    pluralName: 'campaign-types';
+    singularName: 'campaign-type';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::campaign-type.campaign-type'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Type: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCityCity extends Struct.CollectionTypeSchema {
+  collectionName: 'cities';
+  info: {
+    displayName: 'City';
+    pluralName: 'cities';
+    singularName: 'city';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::city.city'> &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiClientClient extends Struct.CollectionTypeSchema {
   collectionName: 'clients';
   info: {
@@ -457,6 +515,102 @@ export interface ApiEquitaEquita extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Year: Schema.Attribute.Relation<'oneToOne', 'api::year.year'>;
+  };
+}
+
+export interface ApiSocialTypeSocialType extends Struct.CollectionTypeSchema {
+  collectionName: 'social_types';
+  info: {
+    displayName: 'Social Type';
+    pluralName: 'social-types';
+    singularName: 'social-type';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::social-type.social-type'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Type: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStateState extends Struct.CollectionTypeSchema {
+  collectionName: 'states';
+  info: {
+    description: '';
+    displayName: 'State';
+    pluralName: 'states';
+    singularName: 'state';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Cities: Schema.Attribute.Relation<'oneToMany', 'api::city.city'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::state.state'> &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTableTable extends Struct.CollectionTypeSchema {
+  collectionName: 'tables';
+  info: {
+    description: '';
+    displayName: 'Table';
+    pluralName: 'tables';
+    singularName: 'table';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CampaignType: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::campaign-type.campaign-type'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    CreativeType: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::work-type.work-type'
+    >;
+    Description: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::table.table'> &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    SocialType: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::social-type.social-type'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1091,8 +1245,13 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::aptus.aptus': ApiAptusAptus;
+      'api::campaign-type.campaign-type': ApiCampaignTypeCampaignType;
+      'api::city.city': ApiCityCity;
       'api::client.client': ApiClientClient;
       'api::equita.equita': ApiEquitaEquita;
+      'api::social-type.social-type': ApiSocialTypeSocialType;
+      'api::state.state': ApiStateState;
+      'api::table.table': ApiTableTable;
       'api::ujjivan.ujjivan': ApiUjjivanUjjivan;
       'api::version.version': ApiVersionVersion;
       'api::work-type.work-type': ApiWorkTypeWorkType;

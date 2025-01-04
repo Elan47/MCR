@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_performance_performances",
+  "info": {
+    "displayName": "Performance"
+  },
+  "options": {},
+  "attributes": {
+    "City": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::city.city"
+    },
+    "UserCount": {
+      "type": "integer"
+    }
+  }
+}
