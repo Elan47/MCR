@@ -13,7 +13,9 @@
   "pluginOptions": {},
   "attributes": {
     "Name": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
     },
     "Description": {
       "type": "richtext"
@@ -32,6 +34,15 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::campaign-type.campaign-type"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "creative",
+        "social",
+        "campaign"
+      ],
+      "required": true
     }
   }
 }

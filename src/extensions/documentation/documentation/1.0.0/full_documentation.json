@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-01-04T04:55:41.968Z"
+    "x-generation-date": "2025-01-06T07:20:45.955Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -11437,6 +11437,10 @@
         ],
         "properties": {
           "data": {
+            "required": [
+              "Name",
+              "Type"
+            ],
             "type": "object",
             "properties": {
               "Name": {
@@ -11486,6 +11490,14 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "Type": {
+                "type": "string",
+                "enum": [
+                  "creative",
+                  "social",
+                  "campaign"
+                ]
               },
               "locale": {
                 "type": "string"
@@ -11545,6 +11557,10 @@
       },
       "Table": {
         "type": "object",
+        "required": [
+          "Name",
+          "Type"
+        ],
         "properties": {
           "id": {
             "type": "number"
@@ -12014,6 +12030,14 @@
               }
             }
           },
+          "Type": {
+            "type": "string",
+            "enum": [
+              "creative",
+              "social",
+              "campaign"
+            ]
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -12109,6 +12133,14 @@
                       }
                     }
                   }
+                },
+                "Type": {
+                  "type": "string",
+                  "enum": [
+                    "creative",
+                    "social",
+                    "campaign"
+                  ]
                 },
                 "createdAt": {
                   "type": "string",
