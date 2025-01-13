@@ -4,7 +4,8 @@
   "info": {
     "singularName": "ujjivan",
     "pluralName": "ujjivans",
-    "displayName": "Ujjivan"
+    "displayName": "Ujjivan",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,7 +19,7 @@
     },
     "Month": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "month.month"
     }
   }

@@ -38,9 +38,9 @@
     "Type": {
       "type": "enumeration",
       "enum": [
-        "creative",
-        "social",
-        "campaign"
+        "Creative",
+        "Social",
+        "Campaign"
       ],
       "required": true
     }

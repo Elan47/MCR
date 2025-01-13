@@ -1,7 +1,8 @@
 {
   "collectionName": "components_campaign_campaigns",
   "info": {
-    "displayName": "Campaign"
+    "displayName": "Campaign",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -17,6 +18,11 @@
     },
     "Count": {
       "type": "integer"
+    },
+    "CampaignProduct": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::campaign-product.campaign-product"
     }
   }
 }

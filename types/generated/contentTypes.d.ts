@@ -387,12 +387,43 @@ export interface ApiAptusAptus extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::aptus.aptus'> &
       Schema.Attribute.Private;
-    Month: Schema.Attribute.Component<'month.month', false>;
+    Month: Schema.Attribute.Component<'month.month', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Year: Schema.Attribute.Relation<'oneToOne', 'api::year.year'>;
+  };
+}
+
+export interface ApiCampaignProductCampaignProduct
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'campaign_products';
+  info: {
+    displayName: 'Campaign Product';
+    pluralName: 'campaign-products';
+    singularName: 'campaign-product';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::campaign-product.campaign-product'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -610,7 +641,7 @@ export interface ApiTableTable extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::social-type.social-type'
     >;
-    Type: Schema.Attribute.Enumeration<['creative', 'social', 'campaign']> &
+    Type: Schema.Attribute.Enumeration<['Creative', 'Social', 'Campaign']> &
       Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -621,6 +652,7 @@ export interface ApiTableTable extends Struct.CollectionTypeSchema {
 export interface ApiUjjivanUjjivan extends Struct.CollectionTypeSchema {
   collectionName: 'ujjivans';
   info: {
+    description: '';
     displayName: 'Ujjivan';
     pluralName: 'ujjivans';
     singularName: 'ujjivan';
@@ -638,7 +670,7 @@ export interface ApiUjjivanUjjivan extends Struct.CollectionTypeSchema {
       'api::ujjivan.ujjivan'
     > &
       Schema.Attribute.Private;
-    Month: Schema.Attribute.Component<'month.month', false>;
+    Month: Schema.Attribute.Component<'month.month', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1249,6 +1281,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::aptus.aptus': ApiAptusAptus;
+      'api::campaign-product.campaign-product': ApiCampaignProductCampaignProduct;
       'api::campaign-type.campaign-type': ApiCampaignTypeCampaignType;
       'api::city.city': ApiCityCity;
       'api::client.client': ApiClientClient;

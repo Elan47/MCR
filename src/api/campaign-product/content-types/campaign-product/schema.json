@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "campaign_products",
+  "info": {
+    "singularName": "campaign-product",
+    "pluralName": "campaign-products",
+    "displayName": "Campaign Product"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    }
+  }
+}
