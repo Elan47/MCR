@@ -19,7 +19,7 @@
     },
     "Month": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "month.month"
     }
   }

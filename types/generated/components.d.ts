@@ -3,9 +3,14 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface CampaignCampaign extends Struct.ComponentSchema {
   collectionName: 'components_campaign_campaigns';
   info: {
+    description: '';
     displayName: 'Campaign';
   };
   attributes: {
+    CampaignProduct: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::campaign-product.campaign-product'
+    >;
     CampaignType: Schema.Attribute.Relation<
       'oneToOne',
       'api::campaign-type.campaign-type'
@@ -56,6 +61,7 @@ export interface ImpressionSocialField extends Struct.ComponentSchema {
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<1>;
     Detail: Schema.Attribute.RichText;
+    Follower: Schema.Attribute.Integer;
     Like: Schema.Attribute.Integer;
     Reach: Schema.Attribute.Integer;
     Share: Schema.Attribute.Integer;
