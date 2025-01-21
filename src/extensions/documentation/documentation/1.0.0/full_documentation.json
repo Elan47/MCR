@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-01-21T11:48:28.472Z"
+    "x-generation-date": "2025-01-21T12:07:28.924Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -1050,7 +1050,7 @@
         "operationId": "delete/campaign-products/{id}"
       }
     },
-    "/campaign-types": {
+    "/campaign-typess": {
       "get": {
         "responses": {
           "200": {
@@ -1221,7 +1221,7 @@
             }
           }
         ],
-        "operationId": "get/campaign-types"
+        "operationId": "get/campaign-typess"
       },
       "post": {
         "responses": {
@@ -1290,7 +1290,7 @@
           "Campaign-type"
         ],
         "parameters": [],
-        "operationId": "post/campaign-types",
+        "operationId": "post/campaign-typess",
         "requestBody": {
           "required": true,
           "content": {
@@ -1303,7 +1303,7 @@
         }
       }
     },
-    "/campaign-types/{id}": {
+    "/campaign-typess/{id}": {
       "get": {
         "responses": {
           "200": {
@@ -1382,7 +1382,7 @@
             }
           }
         ],
-        "operationId": "get/campaign-types/{id}"
+        "operationId": "get/campaign-typess/{id}"
       },
       "put": {
         "responses": {
@@ -1462,7 +1462,7 @@
             }
           }
         ],
-        "operationId": "put/campaign-types/{id}",
+        "operationId": "put/campaign-typess/{id}",
         "requestBody": {
           "required": true,
           "content": {
@@ -1553,7 +1553,7 @@
             }
           }
         ],
-        "operationId": "delete/campaign-types/{id}"
+        "operationId": "delete/campaign-typess/{id}"
       }
     },
     "/cities": {

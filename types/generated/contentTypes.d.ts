@@ -432,7 +432,7 @@ export interface ApiCampaignTypeCampaignType
   collectionName: 'campaign_types';
   info: {
     displayName: 'Campaign Type';
-    pluralName: 'campaign-types';
+    pluralName: 'campaign-typess';
     singularName: 'campaign-type';
   };
   options: {
