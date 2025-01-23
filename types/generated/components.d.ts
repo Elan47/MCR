@@ -83,7 +83,6 @@ export interface MonthMonth extends Struct.ComponentSchema {
     Campaign: Schema.Attribute.Component<'campaign.campaign', true>;
     Creative: Schema.Attribute.Component<'field.field', true> &
       Schema.Attribute.Required;
-    Impression: Schema.Attribute.Component<'impression.social-field', true>;
     Month: Schema.Attribute.Enumeration<
       [
         'January',
@@ -101,6 +100,7 @@ export interface MonthMonth extends Struct.ComponentSchema {
       ]
     > &
       Schema.Attribute.Required;
+    Social: Schema.Attribute.Component<'impression.social-field', true>;
     TopCity: Schema.Attribute.Component<'performance.performance', true>;
   };
 }

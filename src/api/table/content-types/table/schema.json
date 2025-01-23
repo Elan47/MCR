@@ -20,17 +20,17 @@
     "Description": {
       "type": "richtext"
     },
-    "CreativeType": {
+    "Creative": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::work-type.work-type"
     },
-    "SocialType": {
+    "Social": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::social-type.social-type"
     },
-    "CampaignType": {
+    "Campaign": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::campaign-type.campaign-type"

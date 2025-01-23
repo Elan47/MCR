@@ -14,11 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-<<<<<<< HEAD
-    "x-generation-date": "2025-01-21T11:46:35.922Z"
-=======
-    "x-generation-date": "2025-01-21T12:07:28.924Z"
->>>>>>> elan
+    "x-generation-date": "2025-01-23T06:45:54.462Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -8776,7 +8772,7 @@
               "December"
             ]
           },
-          "Impression": {
+          "Social": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ImpressionSocialFieldComponent"
@@ -12438,7 +12434,7 @@
               "Description": {
                 "type": "string"
               },
-              "CreativeType": {
+              "Creative": {
                 "type": "array",
                 "items": {
                   "oneOf": [
@@ -12452,7 +12448,7 @@
                   "example": "string or id"
                 }
               },
-              "SocialType": {
+              "Social": {
                 "type": "array",
                 "items": {
                   "oneOf": [
@@ -12466,7 +12462,7 @@
                   "example": "string or id"
                 }
               },
-              "CampaignType": {
+              "Campaign": {
                 "type": "array",
                 "items": {
                   "oneOf": [
@@ -12563,7 +12559,7 @@
           "Description": {
             "type": "string"
           },
-          "CreativeType": {
+          "Creative": {
             "type": "array",
             "items": {
               "type": "object",
@@ -12574,7 +12570,7 @@
                 "documentId": {
                   "type": "string"
                 },
-                "format": {
+                "Type": {
                   "type": "string"
                 },
                 "createdAt": {
@@ -12883,7 +12879,7 @@
               }
             }
           },
-          "SocialType": {
+          "Social": {
             "type": "array",
             "items": {
               "type": "object",
@@ -12951,7 +12947,7 @@
               }
             }
           },
-          "CampaignType": {
+          "Campaign": {
             "type": "array",
             "items": {
               "type": "object",
@@ -13081,7 +13077,7 @@
                 "Description": {
                   "type": "string"
                 },
-                "CreativeType": {
+                "Creative": {
                   "type": "array",
                   "items": {
                     "type": "object",
@@ -13095,7 +13091,7 @@
                     }
                   }
                 },
-                "SocialType": {
+                "Social": {
                   "type": "array",
                   "items": {
                     "type": "object",
@@ -13109,7 +13105,7 @@
                     }
                   }
                 },
-                "CampaignType": {
+                "Campaign": {
                   "type": "array",
                   "items": {
                     "type": "object",
@@ -14208,11 +14204,11 @@
         "properties": {
           "data": {
             "required": [
-              "format"
+              "Type"
             ],
             "type": "object",
             "properties": {
-              "format": {
+              "Type": {
                 "type": "string"
               },
               "locale": {
@@ -14274,7 +14270,7 @@
       "WorkType": {
         "type": "object",
         "required": [
-          "format"
+          "Type"
         ],
         "properties": {
           "id": {
@@ -14283,7 +14279,7 @@
           "documentId": {
             "type": "string"
           },
-          "format": {
+          "Type": {
             "type": "string"
           },
           "createdAt": {
@@ -14586,7 +14582,7 @@
                 "documentId": {
                   "type": "string"
                 },
-                "format": {
+                "Type": {
                   "type": "string"
                 },
                 "createdAt": {

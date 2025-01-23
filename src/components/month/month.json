@@ -30,7 +30,7 @@
       ],
       "required": true
     },
-    "Impression": {
+    "Social": {
       "type": "component",
       "repeatable": true,
       "component": "impression.social-field"

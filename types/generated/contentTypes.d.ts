@@ -618,14 +618,14 @@ export interface ApiTableTable extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    CampaignType: Schema.Attribute.Relation<
+    Campaign: Schema.Attribute.Relation<
       'oneToMany',
       'api::campaign-type.campaign-type'
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    CreativeType: Schema.Attribute.Relation<
+    Creative: Schema.Attribute.Relation<
       'oneToMany',
       'api::work-type.work-type'
     >;
@@ -637,7 +637,7 @@ export interface ApiTableTable extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
-    SocialType: Schema.Attribute.Relation<
+    Social: Schema.Attribute.Relation<
       'oneToMany',
       'api::social-type.social-type'
     >;
@@ -724,9 +724,6 @@ export interface ApiWorkTypeWorkType extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    format: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -734,6 +731,9 @@ export interface ApiWorkTypeWorkType extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    Type: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

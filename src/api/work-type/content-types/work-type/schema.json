@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "format": {
+    "Type": {
       "type": "string",
       "required": true,
       "unique": true
