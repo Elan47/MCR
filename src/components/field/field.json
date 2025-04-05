@@ -13,7 +13,7 @@
     "Count": {
       "type": "integer"
     },
-    "WorkType": {
+    "Type": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::work-type.work-type"

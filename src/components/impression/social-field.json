@@ -11,7 +11,7 @@
       "required": true,
       "unique": false
     },
-    "SocialType": {
+    "Type": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::social-type.social-type"

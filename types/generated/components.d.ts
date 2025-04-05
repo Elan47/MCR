@@ -11,14 +11,14 @@ export interface CampaignCampaign extends Struct.ComponentSchema {
       'oneToOne',
       'api::campaign-product.campaign-product'
     >;
-    CampaignType: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::campaign-type.campaign-type'
-    >;
     Count: Schema.Attribute.Integer;
     Title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    Type: Schema.Attribute.Relation<
+      'oneToOne',
+      'api::campaign-type.campaign-type'
+    >;
   };
 }
 
@@ -45,7 +45,7 @@ export interface FieldField extends Struct.ComponentSchema {
     Count: Schema.Attribute.Integer;
     Detail: Schema.Attribute.RichText;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
-    WorkType: Schema.Attribute.Relation<'oneToOne', 'api::work-type.work-type'>;
+    Type: Schema.Attribute.Relation<'oneToOne', 'api::work-type.work-type'>;
   };
 }
 
@@ -65,11 +65,8 @@ export interface ImpressionSocialField extends Struct.ComponentSchema {
     Like: Schema.Attribute.Integer;
     Reach: Schema.Attribute.Integer;
     Share: Schema.Attribute.Integer;
-    SocialType: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::social-type.social-type'
-    >;
     Title: Schema.Attribute.String & Schema.Attribute.Required;
+    Type: Schema.Attribute.Relation<'oneToOne', 'api::social-type.social-type'>;
   };
 }
 

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-01-23T06:45:54.462Z"
+    "x-generation-date": "2025-04-05T06:11:14.977Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -8626,7 +8626,7 @@
           "Count": {
             "type": "integer"
           },
-          "WorkType": {
+          "Type": {
             "type": "object",
             "properties": {
               "id": {
@@ -8651,7 +8651,7 @@
           "Title": {
             "type": "string"
           },
-          "SocialType": {
+          "Type": {
             "type": "object",
             "properties": {
               "id": {
@@ -8694,7 +8694,7 @@
           "Title": {
             "type": "string"
           },
-          "CampaignType": {
+          "Type": {
             "type": "object",
             "properties": {
               "id": {
