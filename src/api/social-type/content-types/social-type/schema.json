@@ -4,7 +4,8 @@
   "info": {
     "singularName": "social-type",
     "pluralName": "social-types",
-    "displayName": "Social Type"
+    "displayName": "Social Type",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,18 @@
   "attributes": {
     "Type": {
       "type": "string"
+    },
+    "channel": {
+      "type": "enumeration",
+      "enum": [
+        "Facebook",
+        "Instagram",
+        "Youtube",
+        "Twitter",
+        "Thread",
+        "Linkedin"
+      ],
+      "required": true
     }
   }
 }

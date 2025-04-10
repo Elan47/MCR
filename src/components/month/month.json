@@ -44,6 +44,11 @@
       "type": "component",
       "repeatable": true,
       "component": "performance.performance"
+    },
+    "Followers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "follower.follower"
     }
   }
 }

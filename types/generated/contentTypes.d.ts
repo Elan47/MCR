@@ -552,6 +552,7 @@ export interface ApiEquitaEquita extends Struct.CollectionTypeSchema {
 export interface ApiSocialTypeSocialType extends Struct.CollectionTypeSchema {
   collectionName: 'social_types';
   info: {
+    description: '';
     displayName: 'Social Type';
     pluralName: 'social-types';
     singularName: 'social-type';
@@ -560,6 +561,10 @@ export interface ApiSocialTypeSocialType extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    channel: Schema.Attribute.Enumeration<
+      ['Facebook', 'Instagram', 'Youtube', 'Twitter', 'Thread', 'Linkedin']
+    > &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

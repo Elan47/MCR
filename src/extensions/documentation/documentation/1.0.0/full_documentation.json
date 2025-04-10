@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-04-05T06:11:14.977Z"
+    "x-generation-date": "2025-04-10T05:17:47.585Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -8679,9 +8679,6 @@
           },
           "Count": {
             "type": "integer"
-          },
-          "Follower": {
-            "type": "integer"
           }
         }
       },
@@ -8743,6 +8740,27 @@
           }
         }
       },
+      "FollowerFollowerComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "Channel": {
+            "type": "string",
+            "enum": [
+              "Facebook",
+              "Instagram",
+              "Youtube",
+              "Twitter",
+              "Thread"
+            ]
+          },
+          "count": {
+            "type": "integer"
+          }
+        }
+      },
       "MonthMonthComponent": {
         "type": "object",
         "properties": {
@@ -8788,6 +8806,12 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/PerformancePerformanceComponent"
+            }
+          },
+          "Followers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FollowerFollowerComponent"
             }
           }
         }
@@ -11420,10 +11444,24 @@
         ],
         "properties": {
           "data": {
+            "required": [
+              "channel"
+            ],
             "type": "object",
             "properties": {
               "Type": {
                 "type": "string"
+              },
+              "channel": {
+                "type": "string",
+                "enum": [
+                  "Facebook",
+                  "Instagram",
+                  "Youtube",
+                  "Twitter",
+                  "Thread",
+                  "Linkedin"
+                ]
               },
               "locale": {
                 "type": "string"
@@ -11483,6 +11521,9 @@
       },
       "SocialType": {
         "type": "object",
+        "required": [
+          "channel"
+        ],
         "properties": {
           "id": {
             "type": "number"
@@ -11492,6 +11533,17 @@
           },
           "Type": {
             "type": "string"
+          },
+          "channel": {
+            "type": "string",
+            "enum": [
+              "Facebook",
+              "Instagram",
+              "Youtube",
+              "Twitter",
+              "Thread",
+              "Linkedin"
+            ]
           },
           "createdAt": {
             "type": "string",
@@ -11795,6 +11847,17 @@
                 },
                 "Type": {
                   "type": "string"
+                },
+                "channel": {
+                  "type": "string",
+                  "enum": [
+                    "Facebook",
+                    "Instagram",
+                    "Youtube",
+                    "Twitter",
+                    "Thread",
+                    "Linkedin"
+                  ]
                 },
                 "createdAt": {
                   "type": "string",
@@ -12892,6 +12955,17 @@
                 },
                 "Type": {
                   "type": "string"
+                },
+                "channel": {
+                  "type": "string",
+                  "enum": [
+                    "Facebook",
+                    "Instagram",
+                    "Youtube",
+                    "Twitter",
+                    "Thread",
+                    "Linkedin"
+                  ]
                 },
                 "createdAt": {
                   "type": "string",

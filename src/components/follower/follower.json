@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_follower_followers",
+  "info": {
+    "displayName": "Follower"
+  },
+  "options": {},
+  "attributes": {
+    "Channel": {
+      "type": "enumeration",
+      "enum": [
+        "Facebook",
+        "Instagram",
+        "Youtube",
+        "Twitter",
+        "Thread"
+      ]
+    },
+    "count": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    }
+  }
+}

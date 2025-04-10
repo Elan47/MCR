@@ -49,6 +49,26 @@ export interface FieldField extends Struct.ComponentSchema {
   };
 }
 
+export interface FollowerFollower extends Struct.ComponentSchema {
+  collectionName: 'components_follower_followers';
+  info: {
+    displayName: 'Follower';
+  };
+  attributes: {
+    Channel: Schema.Attribute.Enumeration<
+      ['Facebook', 'Instagram', 'Youtube', 'Twitter', 'Thread']
+    >;
+    count: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+  };
+}
+
 export interface ImpressionSocialField extends Struct.ComponentSchema {
   collectionName: 'components_impression_social_fields';
   info: {
@@ -61,7 +81,6 @@ export interface ImpressionSocialField extends Struct.ComponentSchema {
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<1>;
     Detail: Schema.Attribute.RichText;
-    Follower: Schema.Attribute.Integer;
     Like: Schema.Attribute.Integer;
     Reach: Schema.Attribute.Integer;
     Share: Schema.Attribute.Integer;
@@ -80,6 +99,7 @@ export interface MonthMonth extends Struct.ComponentSchema {
     Campaign: Schema.Attribute.Component<'campaign.campaign', true>;
     Creative: Schema.Attribute.Component<'field.field', true> &
       Schema.Attribute.Required;
+    Followers: Schema.Attribute.Component<'follower.follower', true>;
     Month: Schema.Attribute.Enumeration<
       [
         'January',
@@ -119,6 +139,7 @@ declare module '@strapi/strapi' {
       'campaign.campaign': CampaignCampaign;
       'client.client': ClientClient;
       'field.field': FieldField;
+      'follower.follower': FollowerFollower;
       'impression.social-field': ImpressionSocialField;
       'month.month': MonthMonth;
       'performance.performance': PerformancePerformance;
